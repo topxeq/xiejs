@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script type="text/javascript" src="tk.js"></script>
+        <script type="text/javascript" src="xie.js"></script>
+        <script>
+       		function runXie() {
+                var codeT = document.getElementById('xieCodeID').value;
+
+                var xie = new Xie();
+
+                var rs = xie.runCode(codeT)
+
+                if (tk.isErrStr(rs) && rs == "TXERROR:no result") {
+
+                } else {
+                    console.log(rs)
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div style="width: 100%; margin-top: 1.0em; text-align: center;">
+			<button onclick="javascript:runXie();">Run</button>
+		</div>
+
+		<div style="width: 100%; margin-top: 1.0em;">
+			<div style="margin: 0 auto; width: 80%; font-size: 1.2em;">
+				<textarea id="xieCodeID" style="width: 100%; height: 20em;">push #i1
+
+push #i2
+                    
+add 
+                    
+alert $pop</textarea>
+			</div>
+		</div>
+
+        <script>
+          // Xielang code
+          var code = "pln `欢迎来到谢语言的世界！`";
+
+          // create a new virtual machine
+          var xie = new Xie();
+
+          // run the VM
+          xie.runCode(code)
+
+        </script>
+    </body>
+</html>
